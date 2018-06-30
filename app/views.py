@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import View, TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.http import HttpResponse
 from . import models
+from django.core.urlresolvers import reverse_lazy
 
 
 
@@ -37,3 +38,10 @@ class SchoolUpdateView(UpdateView):
     model = models.School
     fields = ["name","principal"]
     template_name = "app/create_school.html"
+
+
+class SchoolDeleteView(DeleteView):
+    model = models.School
+    success_url =  reverse_lazy("app:list")                        #Don't wanna hardcode urls
+    template_name = "app/delete_school.html"
+    context_object_name = "school"  #btw this is the default name <3

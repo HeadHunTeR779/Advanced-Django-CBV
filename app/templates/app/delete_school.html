@@ -1,0 +1,13 @@
+{% extends "app/app_base.html" %}
+
+{%block title%}Confirm Deletion{% endblock %}
+
+
+{%block body%}
+<h1>Confirm deleting {{school.name}}?</h1>
+
+<form method="post">{% csrf_token %}
+  <input type="submit" class="btn btn-danger" value="Delete">
+  <a href="{% url 'app:detail' pk=school.pk%}" class="btn btn-info">Cancel</a>
+</form>
+{%endblock%}
