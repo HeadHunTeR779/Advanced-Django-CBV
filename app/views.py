@@ -18,6 +18,6 @@ class SchoolListView(ListView):
     #also the template it wants is school_list.html so this file name is also compulsory
 
 class SchoolDetailView(DetailView):
-    context_object_name = "school_detail" #default is just school it just lowercases everything thats it!
     model = models.School
+    context_object_name = "school_detail" #default is just school it just lowercases everything thats it!
     template_name = "app/school_detail.html"

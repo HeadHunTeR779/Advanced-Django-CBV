@@ -10,6 +10,12 @@
     <p>Name: {{ school_detail.name }}</p>
     <p>Principal: {{ school_detail.principal }}</p>
     <p>Location: {{ school_detail.location }}</p>
+
+    <h3>Student Names:</h3>
+    {% for student in school_detail.students.all %}
+      <p>{{student.name}} who is {{student.age}} years old.</p>
+    {% endfor %}
+
   </div>
 
 

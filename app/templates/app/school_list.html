@@ -8,7 +8,7 @@
     <h1 class="display-2">Welcome to a list of all Schools!</h1>
     <ol>
       {% for school in schools %}
-        <li><h3>{{school.name}}</h3></li>
+        <li><h3><a href="{{school.id}}">{{school.name}}</a></h3></li>
       {% endfor %}
     </ol>
   </div>
