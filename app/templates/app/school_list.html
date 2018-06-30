@@ -1,0 +1,16 @@
+{% extends "app/app_base.html" %}  <!-- This is from templates with the app directory -->
+
+{% block title %}School List{% endblock %}
+
+{% block body %}
+
+  <div class="jumbotron">
+    <h1 class="display-2">Welcome to a list of all Schools!</h1>
+    <ol>
+      {% for school in schools %}
+        <li><h3>{{school.name}}</h3></li>
+      {% endfor %}
+    </ol>
+  </div>
+
+{% endblock %}
